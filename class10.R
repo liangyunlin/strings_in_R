@@ -88,3 +88,48 @@ cat(headers)
 
 bodies = str_sub(emails, start= location[,2])
 cat(bodies[2])
+
+
+### second lab
+## #1 
+fruit = c("apple","banana",
+          "pear","pineapple")
+
+## #2
+# detect if the pattern is found
+str_detect(fruit,"a")
+
+# pattern starts with a  
+str_detect(fruit,"^a")
+
+# pattern ends with a
+str_detect(fruit,"a$")
+
+# pattern has a, e, i, o, or u 
+str_detect(fruit, "[aeiou]")
+
+# pattern has a to d (or)
+str_detect(fruit, "[a-d]")
+
+# check any number
+str_detect(fruit, "[0-9]")
+
+# check any alphabetics
+str_detect(fruit, "[a-z]")
+
+str_detect(fruit, c("^ae$")) # check for 2 characters "ae" only
+str_detect(fruit, c("^a[a-z]e$")) # check for 3 characters "ae" only
+str_detect(fruit, c("^a[a-z]*e$")) # [a-z]* can be as many times as we want
+str_detect(fruit, c("^a.*e$")) # "." represents any kind of character
+
+## #4
+phone = c("213 740 4826", 
+          "213-740-4826",
+          "(213) 740 4826") 
+
+str_detect(phone, "[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+
+## #5
+str_extract_all(bodies, "[(]?[0-9]{3}[)]?[ -][0-9]{3}[ -][0-9]{4}")
+
+
